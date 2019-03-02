@@ -1,0 +1,102 @@
+  <html lang="es">
+  <head>
+  <title>Mapa Gimnasios BCN</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="autor"/>
+    <meta name="description" content="descripción página">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <!--leaflet search by atrributes
+    <link rel="stylesheet" href="../src/leaflet-search.css" />
+    <script src="../src/leaflet-search.js"></script>-->
+    <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+
+    <style>
+      /* mapa página completa*/
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+     </style>
+      <script>
+        var map, osm, esri;
+        var geojson, gims;
+        var controlCapas;
+        var controlEscala;
+        function init(){
+            map = L.map("map",{
+            center:[41.39776918360643, 2.1961095928327268],
+            zoom:14
+            });
+            esri = L.tileLayer(
+                'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    maxZoom: 17,
+                    minZoom: 1,
+                    attribution: 'Tiles © Esri',
+                }).addTo(map);
+            
+            osm= L.tileLayer("https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png",
+            {
+            maxZoom : 17,
+            minZoom : 1,
+            attribution : "OSM"
+            });
+            var baseMaps = {
+                "Orto": esri,
+                "OSM": osm
+            };
+            var overlayMaps = {
+              "gimnasios": gims
+            };
+            controlCapas = L.control.layers(baseMaps, overlayMaps);
+            controlCapas.addTo(map);
+            controlEscala = L.control.scale({imperial:false});
+            controlEscala.addTo(map);
+           /*controlSearch
+            var controlSearch = new L.Control.Search({
+              position:'topright',		
+              layer: esri,
+              initial: false,
+              zoom: 12,
+              marker: false
+            });
+            map.addControl( controlSearch );*/
+
+            /*gimnasios*/
+            gims = new L.GeoJSON.AJAX('dades/gims.geojson', {
+                maxZoom: 17,
+                minZoom: 14,
+                onEachFeature: function (feature, layer) {
+                    popupContent = "<b>" + feature.properties.NOM + "</b><br>" + feature.properties
+                        .CARRER + " " + feature.properties.DOORNUM + "</b>";
+                    layer.bindPopup(popupContent);
+                },
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#00ff00",
+                        color: "#ffffff",
+                        weight: 3,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+                }
+            }).addTo(map);
+      
+
+
+          
+        }
+        </script>
+  </head>
+  <body onLoad="init()">
+    <div id="map"></div>
+    </body>
+  </html>

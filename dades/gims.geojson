@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": {  "NOM": "DIR Diagonal", "CARRER": "Carrer Ganduxer", "DOORNUM": "25", "NBarri": "Sant Gervasi-Galvany", "NDistric": "Sarrià-Sant Gervasi", "x": "431912.0", "y": "4583509.0", "UTM_X": "431912", "UTM_Y": "4583509" }, "geometry": { "type": "Point", "coordinates": [ 2.137361168861389, 41.394372798807204 ] } }
+]
+}
