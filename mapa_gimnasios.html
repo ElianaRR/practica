@@ -8,10 +8,12 @@
     <meta name="robots" content="index,follow">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-    <!--leaflet search by atrributes
-    <link rel="stylesheet" href="../src/leaflet-search.css" />
-    <script src="../src/leaflet-search.js"></script>-->
     <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+    
+    <leaflet search by atrributes 
+    <link rel="stylesheet" href="../src/leaflet-search.css" />
+    <script src="../src/leaflet-search.js"></script>
+  
 
     <style>
       /* mapa página completa*/
@@ -48,27 +50,6 @@
             minZoom : 1,
             attribution : "OSM"
             });
-            var baseMaps = {
-                "Orto": esri,
-                "OSM": osm
-            };
-            var overlayMaps = {
-              "gimnasios": gims
-            };
-            controlCapas = L.control.layers(baseMaps, overlayMaps);
-            controlCapas.addTo(map);
-            controlEscala = L.control.scale({imperial:false});
-            controlEscala.addTo(map);
-           /*controlSearch
-            var controlSearch = new L.Control.Search({
-              position:'topright',		
-              layer: esri,
-              initial: false,
-              zoom: 12,
-              marker: false
-            });
-            map.addControl( controlSearch );*/
-
             /*gimnasios*/
             gims = new L.GeoJSON.AJAX('dades/gims.geojson', {
                 maxZoom: 17,
@@ -79,22 +60,73 @@
                     layer.bindPopup(popupContent);
                 },
                 pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, {
+                    /*return L.circleMarker(latlng, {
                         radius: 6,
-                        fillColor: "#00ff00",
+                        fillColor: "#4fc1e9",
                         color: "#ffffff",
                         weight: 3,
                         opacity: 1,
                         fillOpacity: 0.8
-                    });
+                    });*/
+
+
+                    switch (feature.properties.BRANCH) {
+                      case 'DIR': return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#4fc1e9",
+                        color: "#ffffff",
+                        weight: 3,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                      });
+                      case 'Anytime': return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#6c4675",
+                        color: "#ffffff",
+                        weight: 3,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                      });
+                      case 'DuetFit': return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#ff8000",
+                        color: "#ffffff",
+                        weight: 3,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                      });
+                       
+                    }
+
+                 
+
+
+
                 }
             }).addTo(map);
-      
+            var baseMaps = {
+                "Orto": esri,
+                "OSM": osm
+            };
+            var overlayMaps = {
+              "gimnasios": gims
+            };
+            controlCapas = L.control.layers(baseMaps, null);
+            controlCapas.addTo(map);
+            controlEscala = L.control.scale({imperial:false});
+            controlEscala.addTo(map);
+           controlSearch
+           /* var controlSearch = new L.Control.Search({
+              position:'topright',		
+              layer: esri,
+              initial: false,
+              zoom: 12,
+              marker: false
+            });
+            map.addControl( controlSearch );*/
 
-
-          
-        }
-        </script>
+        };
+      </script>
   </head>
   <body onLoad="init()">
     <div id="map"></div>
