@@ -11,9 +11,9 @@ La práctica está hecha en leaflet y contiene lo siguiente:
  >se pone a falso el control de zoom del mapa para poder cambiar los literales que aparecen cuando paso el ratón por encima del símbolo + y -
 
 - **se añade un cambio de color en el marker**, en función de la cadena de gimnasios que es:
->#lila: Anytime fitness
->#naranja: Duet Fit
->#azul: DIR
+>- lila: Anytime fitness
+>- naranja: Duet Fit
+>- azul: DIR
 
 >**Note:** Este cambio se hace con un switch.
 
