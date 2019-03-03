@@ -1,20 +1,17 @@
-  <html lang="es">
+  <html lang="ca">
   <head>
-  <title>Mapa Gimnasios BCN</title>
-    <meta charset="utf-8" />
+  <title>Mapa Gimnasos BCN</title>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="autor"/>
     <meta name="description" content="descripción página">
     <meta name="robots" content="index,follow">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
-    
-    <leaflet search by atrributes 
-    <link rel="stylesheet" href="../src/leaflet-search.css" />
-    <script src="../src/leaflet-search.js"></script>
   
-
+  
     <style>
       /* mapa página completa*/
       body {
@@ -25,17 +22,23 @@
       #map {
         height: 100%;
         width: 100%;
+        
       }
+
      </style>
       <script>
         var map, osm, esri;
         var geojson, gims;
         var controlCapas;
         var controlEscala;
+        var controlZoom;
+
         function init(){
             map = L.map("map",{
             center:[41.39776918360643, 2.1961095928327268],
-            zoom:14
+            zoom:14,
+            zoomControl: false,
+        
             });
             esri = L.tileLayer(
                 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -44,32 +47,28 @@
                     attribution: 'Tiles © Esri',
                 }).addTo(map);
             
-            osm= L.tileLayer("https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png",
+            osm= L.tileLayer("https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png",
             {
             maxZoom : 17,
             minZoom : 1,
             attribution : "OSM"
             });
+
+
             /*gimnasios*/
-            gims = new L.GeoJSON.AJAX('dades/gims.geojson', {
+            gims = new L.GeoJSON.AJAX('dades/gims3.geojson', {
                 maxZoom: 17,
                 minZoom: 14,
                 onEachFeature: function (feature, layer) {
-                    popupContent = "<b>" + feature.properties.NOM + "</b><br>" + feature.properties
-                        .CARRER + " " + feature.properties.DOORNUM + "</b>";
+                    popupContent = "<b>" + feature.properties.NOM + "</b><br>" + "<b>"+ feature.properties
+                        .CARRER + " " + feature.properties.DOORNUM + "</b>"+"<br>"+
+                        "<b><a href='"+ feature.properties.WEB +"'>"+ feature.properties.LINK +" </a></b>";
                     layer.bindPopup(popupContent);
+
+                  
                 },
                 pointToLayer: function (feature, latlng) {
-                    /*return L.circleMarker(latlng, {
-                        radius: 6,
-                        fillColor: "#4fc1e9",
-                        color: "#ffffff",
-                        weight: 3,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                    });*/
-
-
+                 
                     switch (feature.properties.BRANCH) {
                       case 'DIR': return L.circleMarker(latlng, {
                         radius: 6,
@@ -98,10 +97,6 @@
                        
                     }
 
-                 
-
-
-
                 }
             }).addTo(map);
             var baseMaps = {
@@ -109,26 +104,23 @@
                 "OSM": osm
             };
             var overlayMaps = {
-              "gimnasios": gims
+              "GimnasiosBCN": gims
             };
-            controlCapas = L.control.layers(baseMaps, null);
+            controlCapas = L.control.layers(baseMaps, overlayMaps);
             controlCapas.addTo(map);
             controlEscala = L.control.scale({imperial:false});
             controlEscala.addTo(map);
-           controlSearch
-           /* var controlSearch = new L.Control.Search({
-              position:'topright',		
-              layer: esri,
-              initial: false,
-              zoom: 12,
-              marker: false
-            });
-            map.addControl( controlSearch );*/
-
+            controlZoom=L.control.zoom({zoomInTitle:'Apropa',zoomOutTitle:'Allunya'});
+            controlZoom.addTo(map);
+                         
         };
+
       </script>
+ 
   </head>
   <body onLoad="init()">
+ 
     <div id="map"></div>
-    </body>
+    
+  </body>
   </html>
