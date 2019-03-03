@@ -47,22 +47,22 @@
                     attribution: 'Tiles © Esri',
                 }).addTo(map);
             
-            osm= L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png',
-            {
-            maxZoom : 17,
-            minZoom : 1,
-            attribution : "OSM"
+            osm= L.tileLayer(
+                'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+                  maxZoom : 17,
+                  minZoom : 1,
+                  attribution : 'OSM'
             });
 
 
             /*gimnasios*/
             gims = new L.GeoJSON.AJAX('dades/gims3.geojson', {
                 maxZoom: 17,
-                minZoom: 14,
+                minZoom: 4,
                 onEachFeature: function (feature, layer) {
                     popupContent = "<b>" + feature.properties.NOM + "</b><br>" + "<b>"+ feature.properties
                         .CARRER + " " + feature.properties.DOORNUM + "</b>"+"<br>"+
-                        "<b><a href='"+ feature.properties.WEB +"'>"+ feature.properties.LINK +" </a></b>";
+                        "<b><a target=' blank' href='"+ feature.properties.WEB +"'>"+ feature.properties.LINK +" </a></b>";
                     layer.bindPopup(popupContent);
 
                   

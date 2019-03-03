@@ -8,7 +8,7 @@
 
 { "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Castillejos", "CARRER": "Carrer Castillejos", "DOORNUM": "388", "NBarri": "El Baix Guinardó", "NDistric": "Horta_Guinardó", "WEB":"https://www.dir.cat/es/gimnasios-barcelona/castillejos", "LINK":"Visita la seva web"  }, "geometry": { "type": "Point", "coordinates": [2.170749306678772,41.412439204663215] } },
 
-{ "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Gràcia", "CARRER": "Gran de Gràcia", "DOORNUM": "37", "NBarri": "La Vila de Gràcia", "NDistric": "Gràcia", "WEB":"https://www.dir.cat/es/gimnasios-barcelona/gracia", "LINK":"Visita la seva web"   }, "geometry": { "type": "Point", "coordinates": [2.156420946121216,41.398920050992636] } },
+{ "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Gràcia", "CARRER": "Gran de Gracia", "DOORNUM": "37", "NBarri": "La Vila de Gràcia", "NDistric": "Gràcia", "WEB":"https://www.dir.cat/es/gimnasios-barcelona/gracia", "LINK":"Visita la seva web"   }, "geometry": { "type": "Point", "coordinates": [2.156420946121216,41.398920050992636] } },
 
 { "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Claret", "CARRER": "Carrer de Sant Antoni Maria Claret", "DOORNUM": "84-86", "NBarri": "El Camp d'en Grassot i Gràcia Nova", "NDistric": "Gràcia","WEB":"https://www.dir.cat/es/gimnasios-barcelona/claret", "LINK":"Visita la seva web"  }, "geometry": { "type": "Point", "coordinates": [2.1680080890655518,41.40630362787361] } },
 
@@ -20,7 +20,7 @@
 
 { "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Maragall", "CARRER": "Carrer de Sant Antoni Maria Claret", "DOORNUM": "362", "NBarri": "El Camp de l'Arpa del Clot", "NDistric": "Sant Martí", "WEB":"https://www.dir.cat/es/gimnasios-barcelona/maragall", "LINK":"Visita la seva web"  }, "geometry": { "type": "Point", "coordinates": [2.1816444396972656,41.41656681419523] } },
 
-{ "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Tres Torres", "CARRER": "Carrer Vergós", "DOORNUM": "4", "NBarri": "Les Tres Torres", "NDistric": "Sarrià-Sant Gervasi", "WEB":"https://www.dir.cat/es/gimnasios-barcelona/tres-torres", "LINK":"Visita la seva web"   }, "geometry": { "type": "Point", "coordinates": [2.131068706512451,41.399869702440526] } },
+{ "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Tres Torres", "CARRER": "Carrer Vergos", "DOORNUM": "4", "NBarri": "Les Tres Torres", "NDistric": "Sarrià-Sant Gervasi", "WEB":"https://www.dir.cat/es/gimnasios-barcelona/tres-torres", "LINK":"Visita la seva web"   }, "geometry": { "type": "Point", "coordinates": [2.131068706512451,41.399869702440526] } },
 
 { "type": "Feature", "properties": {  "BRANCH": "DIR","NOM": "DiR Tuset", "CARRER": "Carrer Aribau", "DOORNUM": "230-240", "NBarri": "Sant Gervasi-Galvany", "NDistric": "Sarrià-Sant Gervasi", "WEB":"https://www.dir.cat/es/gimnasios-barcelona/tuset", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.150273323059082,41.395636403456514] } },
 
@@ -40,15 +40,15 @@
 
 { "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (LES CORTS)", "CARRER": "Carrer Montnegre", "DOORNUM": "8-10", "NBarri": "Les Corts", "NDistric": "Les Corts", "WEB":"https://www.anytimefitness.es/gimnasio-les-corts/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.1381282806396484,41.38662161630905] } },
 
-{ "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (MOIANÈS)", "CARRER": "Carrer Moianès", "DOORNUM": "19", "NBarri": "La Bordeta", "NDistric": "Sants-Montjuïc","WEB":"https://www.anytimefitness.es/gimnasio-moianes/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.142283022403717,41.37107018336718] } },
+{ "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (MOIANÈS)", "CARRER": "Carrer Moianes", "DOORNUM": "19", "NBarri": "La Bordeta", "NDistric": "Sants-Montjuïc","WEB":"https://www.anytimefitness.es/gimnasio-moianes/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.142283022403717,41.37107018336718] } },
 
 { "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (PEDRALBES CENTER)", "CARRER": "Avinguda Diagonal", "DOORNUM": "609-615", "NBarri": "Les Corts", "NDistric": "Les Corts", "WEB":"https://www.anytimefitness.es/gimnasio-pedralbes/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.129199206829071,41.38748894147247] } },
 
-{ "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (AV.MADRID)", "CARRER": "Carrer del Comandante Benítez", "DOORNUM": "29", "NBarri": "La Maternitat i Sant Ramon", "NDistric": "Les Corts", "WEB":"https://www.anytimefitness.es/gimnasio-av-madrid/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.126998821092343,41.37962983756784] } },
+{ "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (AV.MADRID)", "CARRER": "Carrer del Comandante Benitez", "DOORNUM": "29", "NBarri": "La Maternitat i Sant Ramon", "NDistric": "Les Corts", "WEB":"https://www.anytimefitness.es/gimnasio-av-madrid/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.126998821092343,41.37962983756784] } },
 
 { "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (SARRIÀ)", "CARRER": "Avinguda de Josep Vicenç Foix", "DOORNUM": "64", "NBarri": "Sarrià", "NDistric": "Sarrià-Sant Gervasi", "WEB":"https://www.anytimefitness.es/gimnasio-sarria/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.120211124420166,41.39568469359272] } },
 
-{ "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (SANT ANDREU)", "CARRER": "Carrer Sócrates", "DOORNUM": "101-103", "NBarri": "Sant Andreu", "NDistric": "Sant Andreu", "WEB":"https://www.anytimefitness.es/gimnasio-sant-andreu/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.18377947807312,41.431860016052916] } },
+{ "type": "Feature", "properties": {  "BRANCH": "Anytime","NOM": "BARCELONA (SANT ANDREU)", "CARRER": "Carrer Socrates", "DOORNUM": "101-103", "NBarri": "Sant Andreu", "NDistric": "Sant Andreu", "WEB":"https://www.anytimefitness.es/gimnasio-sant-andreu/", "LINK":"Visita la seva web" }, "geometry": { "type": "Point", "coordinates": [2.18377947807312,41.431860016052916] } },
 
 { "type": "Feature", "properties": {  "BRANCH": "DuetFit","NOM": "HIPERCOR MERIDIANA", "CARRER": "Avinguda Meridiana", "DOORNUM": "334", "NBarri": "La Sagrera", "NDistric": "Sant Andreu", "WEB":"https://meridiana.duetfit.es/", "LINK":"Visita la seva web"  }, "geometry": { "type": "Point", "coordinates": [2.186380229039287,41.425931759136] } },
 
