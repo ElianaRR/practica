@@ -21,3 +21,5 @@ La práctica está hecha en leaflet y contiene lo siguiente:
 
 - se pueden ver **varias capas sobre el mapa**.
 
+## Documentación
+(https://github.com/ElianaRR/practica)
